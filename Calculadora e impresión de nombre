@@ -1,0 +1,121 @@
+# calculadora con while
+on = True
+def add():
+    a = float(input("Ingresa un número. "))
+    b = float(input("Ingresa otro número. "))
+    print(a + b)
+
+def subtraction():
+    a = float(input("Ingresa un número. "))
+    b = float(input("Ingresa otro número. "))
+    print(a - b)
+
+def multiply():
+    a = float(input("Ingresa un número. "))
+    b = float(input("Ingresa otro número. "))
+    print(a * b)
+
+def divide():
+    a = float(input("Ingresa un número. "))
+    b = float(input("Ingresa otro número. "))
+    print(a / b)
+
+
+print("Programa simple")
+
+inicio = input ("¿Quieres iniciar? si/no:  ")
+
+while inicio == 'si':
+    print('''Tienes varias opciones:
+    a.- Ingresar nombre.
+    b.- Usar calculadora.
+    c.- Salir''')
+    opcion = input ("¿Que quieres hacer?  ")
+
+    if opcion == 'a':
+        name = input("¿Cómo te llamas? ")
+        print("Hola {}, gusto en saludarte.".format(name))
+        regresar = input ("Desea volver a las opciones? si/no: ")
+        if regresar == 'si':
+            print(" ")
+        elif regresar != 'si' and regresar != 'no':
+            print("Opción incorrecta. Fin del programa")
+            break
+        else:
+            print("Fin del programa. \nGracias por usarlo.")
+            break
+
+    elif opcion == 'b':
+        while on:
+            calcular = input('''¿Que quieres calcular?
+        (+)  Suma  
+        (-)  Resta 
+        (*)  Multiplicación 
+        (/)  División
+        (v)  Volver al Inicio
+        Operación: ''')
+
+            if calcular == '+':
+                add()
+                regresar = input("""Volver a la calculadora (cal), volver al inicio (ini): """)
+                if regresar == 'cal':
+                    print(" ")
+                elif regresar != 'cal' and regresar != 'ini':
+                    print("Opción incorrecta. Fin de la calculadora.")
+                    break
+                else:
+                    print ("Fin de la calculadora. \nGracias por usarla.")
+                    break
+
+            elif calcular == '-':
+                subtraction()
+                regresar = input("""Volver a la calculadora (cal), volver al inicio (ini): """)
+                if regresar == 'cal':
+                    print(" ")
+                elif regresar != 'cal' and regresar != 'ini':
+                    print("Opción incorrecta. Fin de la calculadora.")
+                    break
+                else:
+                    print("Fin de la calculadora. \nGracias por usarla.")
+                    break
+
+            elif calcular == '*':
+                multiply()
+                regresar = input("""Volver a la calculadora (cal), volver al inicio (ini): """)
+                if regresar == 'cal':
+                    print(" ")
+                elif regresar != 'cal' and regresar != 'ini':
+                    print("Opción incorrecta. Fin de la calculadora.")
+                    break
+                else:
+                    print("Fin de la calculadora. \nGracias por usarla.")
+                    break
+
+            elif calcular == '/':
+                divide()
+                regresar = input("""Volver a la calculadora (cal), volver al inicio (ini): """)
+                if regresar == 'cal':
+                    print(" ")
+                elif regresar != 'cal' and regresar != 'ini':
+                    print("Opción incorrecta. Fin de la calculadora.")
+                    break
+                else:
+                    print("Fin de la calculadora. \nGracias por usarla.")
+                    break
+
+            elif calcular == 'v':
+                break
+            else:
+                print("Opción inválida. Vuelva a intentarlo. ")
+
+
+    elif opcion == 'c':
+        print ("Fin del programa. \nGracias por usarlo.")
+        break
+
+if inicio == 'no':
+    print ("Ni siquiera lo intentaste (-.-) Adiós.")
+
+elif inicio !='si' and inicio !='no':
+    print("Opción incorrecta. Fin del programa")
+
